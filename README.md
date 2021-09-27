@@ -5,8 +5,6 @@
 
 알고리즘을 해결하기 위한 언어는 `파이썬`을 사용합니다.
 
-나날이 실력이 향상되는 모습을 공유합니다. 👀
-
 ## 알고리즘 정리 블로그
 [hwangboksil의 velog 바로가기](https://velog.io/@sz3728/series/BAEKJOON-PYTHON)
 
