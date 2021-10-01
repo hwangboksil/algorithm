@@ -7,14 +7,30 @@
 def solution(array, commands):
     answer = []
 
-    for s in range(len(commands)):
-        a = array[commands[s][0]-1:commands[s][1]]
+    for s in commands:
+        a = array[s[0]-1:s[1]]
         a.sort()
-        answer.append(a[commands[s][2]-1])
+        answer.append(a[s[2]-1])
     return answer
 
 print(solution([1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]]))
 
+# - for문에서 range를 사용하지 않고 commands를 바로 사용하여도 실행 됨.
+# - 풀이 과정은 아래 코드와 동일하고 불필요한 commands 값을 가져오는 코드는 삭제함.
+# ============================================================
+
+# ============================================================
+# refactoring 전
+# def solution(array, commands):
+#     answer = []
+
+#     for s in range(len(commands)):
+#         a = array[commands[s][0]-1:commands[s][1]]
+#         a.sort()
+#         answer.append(a[commands[s][2]-1])
+#     return answer
+
+# print(solution([1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]]))
 
 # - for문을 commands의 길이 만큼 반복할 수 있도록 range에 len()함수를 사용한다.
 # - 변수 a에 array를 슬라이싱 후 담는다 
@@ -23,3 +39,4 @@ print(solution([1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]]))
 # - i:j만큼 슬라이싱된 변수 a를 sort로 정렬한다.
 # - 리스트 answer에 append 메서드를 사용하여 k 번째 수를 담고 리턴한다.
 #     commands[0][2]-1 == k <- i와 동일한 이유로 -1을 연산한다.
+# ============================================================
