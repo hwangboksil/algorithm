@@ -3,28 +3,48 @@
 #       두 번째 줄에는 요리하는 데 필요한 시간 C (0 ≤ C ≤ 1,000)가 분 단위로 주어진다. 
 # 출력 : 첫째 줄에 종료되는 시각의 시와 분을 공백을 사이에 두고 출력한다. 
 #       (단, 시는 0부터 23까지의 정수, 분은 0부터 59까지의 정수이다. 디지털 시계는 23시 59분에서 1분이 지나면 0시 0분이 된다.)
-# TestCase (순서대로 TC 1~7)
-# 14 30, 20 | 17 40, 80 | 23 48, 25 | 23 30, 30 | 24 0, 1 | 25 0, 38 | 24 40, 38
+# TestCase (순서대로 a,b,c : TC 1~7)
+# [(14, 30, 20), (17, 40, 80), (23, 48, 25), (23, 30, 30), (24, 0, 1), (25, 0, 38), (24, 40, 38)]
 
 a, b = map(int, input().split())
 c = int(input())
+
 m = b+c
-h = a+(m//60)
+h = (a+(m//60))%24 
 remainder = m%60
 
-if h < 24: # TestCase 1,2
-    if m >= 60: # TC 2
-        print(h, remainder)
-    else: # TC 1
-         print(h, m)
+if m >= 60:
+    print(h, remainder)
+else:
+    print(h, m)
 
-else: # TestCase 3,4,5,6
-    h = h%24
-    if m < 60: # TC 5,6
-         print(h, m)
-    else: # TC 3,4
-         print(h, remainder)
+# - h에서 계산을 전부하여 if문을 간략하게 만듦.
+# - ex) 14, 30, 20
+# - h = 기존 minute(b) + 추가 minute(c)가 m일 때, m // 60을 하면 시간에 추가할 값이 나오고 + 기존 시간을 하여 총 시간을 구한다.
+# - 총 시간 % 24를하여 나머지를 구하면 최종시간(h)이 나온다.
+
+# ==================================================================
+# Refactoring 전
+# a, b = map(int, input().split())
+# c = int(input())
+# m = b+c
+# h = a+(m//60)
+# remainder = m%60
+
+# if h < 24: # TestCase 1,2
+#     if m >= 60: # TC 2
+#         print(h, remainder)
+#     else: # TC 1
+#          print(h, m)
+
+# else: # TestCase 3,4,5,6
+#     h = h%24
+#     if m < 60: # TC 5,6
+#          print(h, m)
+#     else: # TC 3,4
+#          print(h, remainder)
 
 # - 크게 hour부터 구분하기 위해 if문을 사용하여 조건 지정
 # - 중첩 if문으로 minute를 구분하여 준다.
 # - 외부 else문에서 h를 24로 나눈 나머지 값이 시간이므로 h 변수를 재 선언 한다.
+# ==================================================================
