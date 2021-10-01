@@ -4,7 +4,13 @@
 
 K, N, M = map(int, input().split())
 P = (K*N)-M
-if P < 0:
-    print(0)
-else:
-    print(P)
+print(0 if P < 0 else P)
+
+# - if p < 0 인 경우 0 출력, else P 출력
+
+# ===================================
+# P = (K*N)-M
+# if P < 0:
+#     print(0)
+# else:
+#     print(P)
