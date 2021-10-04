@@ -7,9 +7,9 @@ nums = list(str(a*b*c))
 for i in range(10):
     print(nums.count(str(i)))
 
-- a,b,c를 한 줄씩 입력 받을 수 있도록 list comprehension을 사용
-- 변수 nums에 a*b*c의 결과 값을 하나씩 저장할 수 있도록 str타입으로 변경 후 list로 저장한다.
-- for문에 range(10)을 주고 i 값을 int -> str로 변환 후 '0'인경우 nums에서 count를 사용하여 '0'의 개수를 세어 도출된 값을 출력하고 '9'까지 반복한다.
+# - a,b,c를 한 줄씩 입력 받을 수 있도록 list comprehension을 사용
+# - 변수 nums에 a*b*c의 결과 값을 하나씩 저장할 수 있도록 str타입으로 변경 후 list로 저장한다.
+# - for문에 range(10)을 주고 i 값을 int -> str로 변환 후 '0'인경우 nums에서 count를 사용하여 '0'의 개수를 세어 도출된 값을 출력하고 '9'까지 반복한다.
 
 # ===================================================
 # result = []
