@@ -3,7 +3,13 @@
 # 입력으로 주어진 숫자 N개의 합을 출력한다.
 
 N = int(input())
-print(sum([int(i) for i in list(str(int(input())))]))
+print(sum(map(int, input())))
+
+# - 리스트 컴프리헨션이 없어도 map을 사용하면 값이 object 타입이 되므로 이터러블하여 sum함수를 사용할 수 있다.
+
+# =============================================
+# N = int(input())
+# print(sum([int(i) for i in list(str(int(input())))]))
 
 # - 첫째 줄 N 입력 받고 둘째 줄에서 입력 받은 값을 int->str->list 로 변환 하여 이터러블하게 만들어준다.
 # - 이터러블 값을 for문으로 돌려 값을 하나씩 가져오고 int타입으로 바꿔 list에 넣은 다음 sum 함수를 사용하여 더한 값을 출력.
