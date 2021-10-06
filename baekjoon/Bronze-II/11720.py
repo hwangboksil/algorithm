@@ -3,12 +3,19 @@
 # 입력으로 주어진 숫자 N개의 합을 출력한다.
 
 N = int(input())
-n = list(str(int(input())))
-x = 0
+print(sum([int(i) for i in list(str(int(input())))]))
 
-for i in n:
-    x += int(i)
-print(x)
+# - 첫째 줄 N 입력 받고 둘째 줄에서 입력 받은 값을 int->str->list 로 변환 하여 이터러블하게 만들어준다.
+# - 이터러블 값을 for문으로 돌려 값을 하나씩 가져오고 int타입으로 바꿔 list에 넣은 다음 sum 함수를 사용하여 더한 값을 출력.
+
+# =============================================
+# N = int(input())
+# n = list(str(int(input())))
+# x = 0
+
+# for i in n:
+#     x += int(i)
+# print(x)
 
 # - 첫째 줄, 둘째 줄 각각 int 타입으로 입력 받고 n은 list로 변환하기 위해 str 타입으로 감싸준다.
 # - 변수 x를 생성 후 for문에서 반복값을 list n을 부여하여 i에 list 값이 하나씩 담길 수 있도록 한다.
