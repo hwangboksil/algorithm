@@ -1,16 +1,26 @@
 # 나머지
 # 수 10개를 입력받은 뒤, 이를 42로 나눈 나머지를 구한다. 그 다음 서로 다른 값이 몇 개 있는지 출력하는 프로그램을 작성
 
-B = 42
-C = []
+B = set()
+A = [B.add(int(input())%42) for _ in range(10)]
 
-for _ in range(10):
-    A = int(input())
-    C.append(A%B)
-if C == []:
-    C.append(1)
+print(len(B))
 
-print(len(set(C)))
+# - 변수 B를 set으로 선언한다.
+# - 리스트 컴프리헨션을 사용하여 반복문을 실행하고, 반복되면서 입력받은 값에 %42를 계산 후 set에 add하면서 중복도 제거한다.
+# - 최종적으로 B의 개수를 세어 출력한다.
+
+# =================================
+# B = 42
+# C = []
+
+# for _ in range(10):
+#     A = int(input())
+#     C.append(A%B)
+# if C == []:
+#     C.append(1)
+
+# print(len(set(C)))
 
 # - C를 선언해 빈 배열을 생성한다.
 # - for문을 10번 돌려 A에 입력값을 받고, A%B의 값을 C에 넣는다.
