@@ -5,17 +5,34 @@ def solution(arr1, arr2):
     answer = []
     for i in range(len(arr1)):
         x = []
-        if len(arr1[0]) >= 2:
-            for j in range(len(arr1)):
-                x.append(arr1[i][j] + arr2[i][j])
-        else:
-            x = [sum(arr1[i] + arr2[i])]
+        for j in range(len(arr1[0])):
+            x.append(arr1[i][j] + arr2[i][j])
         answer.append(x)
-                                
+            
     return answer
 
 print(solution([[1],[2]], [[3],[4]]))
 print(solution([[1,2],[2,3]], [[3,4],[5,6]]))
+
+# 1. arr1의 길이를 세어 나온 값으로 리스트의 중첩 리스트를 선택할 수 있도록 하고, 빈 배열을 만들어 answer에 append 시 중첩리스트가 될 수 있도록 한다.
+# 2. 조건문 사용없이 중첩 for문에 arr1의 중첩리스트 0번을 센 수를 사용하면 arr의 인덱스가 한정되어 벗어날 수 없다.
+
+# ================== 틀린 코드 ================================
+# def solution(arr1, arr2):
+#     answer = []
+#     for i in range(len(arr1)):
+#         x = []
+#         if len(arr1[0]) >= 2:
+#             for j in range(len(arr1)):
+#                 x.append(arr1[i][j] + arr2[i][j])
+#         else:
+#             x = [sum(arr1[i] + arr2[i])]
+#         answer.append(x)
+                                
+#     return answer
+
+# print(solution([[1],[2]], [[3],[4]]))
+# print(solution([[1,2],[2,3]], [[3,4],[5,6]]))
 
 # 1. arr1의 길이를 세어 나온 값으로 리스트의 중첩 리스트를 선택할 수 있도록 한다.
 # 2. 만약 arr1의 첫번째 배열의 값이 2개 이상이면 인덱스가 2개 이상이므로 중첩 for문을 돌려 중첩 리스트의 값을 가져올 수 있도록 인덱스[i][j]를 지정한다.
